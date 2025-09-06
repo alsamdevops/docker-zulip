@@ -8,7 +8,7 @@ services:
       ## Note that you need to do a manual `ALTER ROLE` query if you
       ## change this on a system after booting the postgres container
       ## the first time on a host.  Instructions are available in README.md.
-      POSTGRES_PASSWORD: "REPLACE_WITH_SECURE_POSTGRES_PASSWORD"
+      POSTGRES_PASSWORD: "Vinod_1234"
     volumes:
       - "postgresql-14:/var/lib/postgresql/data:rw"
   memcached:
@@ -31,7 +31,7 @@ services:
     restart: unless-stopped
     environment:
       RABBITMQ_DEFAULT_USER: "zulip"
-      RABBITMQ_DEFAULT_PASS: "REPLACE_WITH_SECURE_RABBITMQ_PASSWORD"
+      RABBITMQ_DEFAULT_PASS: "Vinod_1234"
     volumes:
       - "rabbitmq:/var/lib/rabbitmq:rw"
   redis:
@@ -44,7 +44,7 @@ services:
         echo "requirepass '$$REDIS_PASSWORD'" > /etc/redis.conf
         exec redis-server /etc/redis.conf
     environment:
-      REDIS_PASSWORD: "REPLACE_WITH_SECURE_REDIS_PASSWORD"
+      REDIS_PASSWORD: "Vinod_1234"
     volumes:
       - "redis:/data:rw"
   zulip:
@@ -76,12 +76,12 @@ services:
       SECRETS_email_password: "123456789"
       ## These should match RABBITMQ_DEFAULT_PASS, POSTGRES_PASSWORD,
       ## MEMCACHED_PASSWORD, and REDIS_PASSWORD above.
-      SECRETS_rabbitmq_password: "REPLACE_WITH_SECURE_RABBITMQ_PASSWORD"
-      SECRETS_postgres_password: "REPLACE_WITH_SECURE_POSTGRES_PASSWORD"
-      SECRETS_memcached_password: "REPLACE_WITH_SECURE_MEMCACHED_PASSWORD"
-      SECRETS_redis_password: "REPLACE_WITH_SECURE_REDIS_PASSWORD"
-      SECRETS_secret_key: "REPLACE_WITH_SECURE_SECRET_KEY"
-      SETTING_EXTERNAL_HOST: "localhost.localdomain"
+      SECRETS_rabbitmq_password: "Vinod_1234"
+      SECRETS_postgres_password: "Vinod_1234"
+      SECRETS_memcached_password: "Vinod_1234"
+      SECRETS_redis_password: "Vinod_1234"
+      SECRETS_secret_key: "Vinod_1234"
+      SETTING_EXTERNAL_HOST: "192.168.137.2"
       SETTING_ZULIP_ADMINISTRATOR: "admin@example.com"
       SETTING_EMAIL_HOST: "" # e.g. smtp.example.com
       SETTING_EMAIL_HOST_USER: "noreply@example.com"
